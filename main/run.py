@@ -1,3 +1,6 @@
+import os
+os.chdir('/main')
+
 import machine
 import time
 import epd
@@ -5,9 +8,6 @@ from write_log import reset_log
 from machine import WDT
 import wifi
 import epd
-import os
-
-os.chdir('/main')
 
 #wdt = WDT(timeout=300000)
 
