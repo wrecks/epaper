@@ -122,9 +122,11 @@ class EPD:
 
     def reset(self):
         self.rst(0)
-        sleep_ms(200)
+        #sleep_ms(200)
+        sleep_ms(2)
         self.rst(1)
-        sleep_ms(200)
+        #sleep_ms(200)
+        sleep_ms(2)
 
     def display_frame(self, frame_buffer_black, frame_buffer_red):
         
@@ -141,7 +143,7 @@ class EPD:
                 self._data(bytearray([frame_buffer_red[i]]))
             sleep_ms(2)
 
-        self._command(DISPLAY_REFRESH)
+        #self._command(DISPLAY_REFRESH)
         self.wait_until_idle()
 
     def set_rotate(self, rotate):
