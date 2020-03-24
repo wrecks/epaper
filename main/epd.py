@@ -55,14 +55,14 @@ def epd_pull():
     Writer.set_textpos(d_b, 6, 0)  # verbose = False to suppress console output
     wri_b.printstring(quote_list[0], True)
     wri_r = Writer(d_r, font10, False)
-    import volt
+    #import volt
     import hour_tim
     slep_tim=hour_tim.time_corr()
-    v_reading="%.2f" % volt.voltage()
+    #v_reading="%.2f" % volt.voltage()
     h='{:02d}:{:02d}.{:02d}'.format(RTC().datetime()[4],RTC().datetime()[5],RTC().datetime()[6])
     Writer.set_textpos(d_r, 110, 0) #y position 110 is max for font10
     print(h, quote_list[1])
-    wri_r.printstring(' -'+quote_list[1]+'  V='+v_reading+' '+h, True)#
+    wri_r.printstring(' -'+quote_list[1]+' '+h, True)#+'  V='+v_reading
 
     # Move frame buffer bytes to e-paper buffer to match e-paper bytes organisation.
     x=0; y=0; n=1; R=0
