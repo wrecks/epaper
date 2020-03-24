@@ -21,7 +21,7 @@ def epd_pull():
     quote_list=quote_api.quote_pull()
 
     # software SPI on ESP32 Waveshare driver board
-    sck = Pin(18)
+    sck = Pin(16)
     mosi = Pin(23)
     cs = Pin(5)
     busy = Pin(15)
@@ -61,7 +61,8 @@ def epd_pull():
     v_reading="%.2f" % volt.voltage()
     h='{:02d}:{:02d}.{:02d}'.format(RTC().datetime()[4],RTC().datetime()[5],RTC().datetime()[6])
     Writer.set_textpos(d_r, 110, 0) #y position 110 is max for font10
-    wri_r.printstring(' -'+quote_list[1]+'        V='+v_reading+'  '+h, True)#
+    print(h, quote_list[1])
+    wri_r.printstring(' -'+quote_list[1]+'  V='+v_reading+' '+h, True)#
 
     # Move frame buffer bytes to e-paper buffer to match e-paper bytes organisation.
     x=0; y=0; n=1; R=0
@@ -85,4 +86,3 @@ def epd_pull():
     machine.deepsleep(slep_tim)
 
     print('END')
-
