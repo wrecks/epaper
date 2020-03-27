@@ -21,8 +21,8 @@ def epd_pull():
     quote_list=quote_api.quote_pull()
 
     # software SPI on ESP32 Waveshare driver board
-    epap_pos=Pin(19,Pin.PULL_UP)
-    epap_neg=Pin(18,Pin.PULL_DOWN)
+    epap_pos=Pin(18,Pin.PULL_UP)
+    epap_neg=Pin(19,Pin.PULL_DOWN)
     sck = Pin(16)
     mosi = Pin(23)
     cs = Pin(5)
