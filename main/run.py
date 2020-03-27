@@ -6,10 +6,10 @@ import time
 import epd
 from write_log import reset_log
 from machine import WDT
-#import wifi
+import wifi
 import epd
 
-wdt = WDT(timeout=300000)
+#wdt = WDT(timeout=300000)
 
 if machine.reset_cause()!=3:
     
