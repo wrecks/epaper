@@ -25,7 +25,7 @@ def epd_pull():
     mosi = Pin(23)
     cs = Pin(5)
     busy = Pin(15)
-    rst = Pin(13)
+    rst = Pin(21)
     dc = Pin(17)
     # miso is not used but must be declared. Let's take any unused gpio: 12
     miso = Pin(12)
